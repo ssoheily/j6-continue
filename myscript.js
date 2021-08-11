@@ -31,8 +31,37 @@
 
 // })
 
-console.log(Number)
-console.log(Math.random())
-// random between from 0 to 1
-console.log(Math.round(Math.random() * 100))
-console.log(Date.now())
+// console.log(Number)
+// console.log(Math.random())
+// // random between from 0 to 1
+// console.log(Math.round(Math.random() * 100))
+// console.log(Date.now())
+
+
+// objecti store on heap and variable in stack
+
+let num1=20;
+let num2 = num1; //num1 , num2     in stack
+
+
+// in heap
+let student1={
+	name:"mehran",
+	age:33
+}
+
+let student2=student1;//refenrece equall place in heap
+
+student2.age=31;
+console.log(student1);
+
+
+// for copy object in another place in heap: ...
+// ...convert to string and convert to object
+student2 = JSON.parse(JSON.stringify(student1))
+
+student2.age=44;
+student1.age=35;
+console.log(student1);
+console.log(student2);
+
